@@ -4,11 +4,4 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-
-    @property
-    def is_teacher(self):
-        return self.user_type == self.UserTypes.TEACHER
-    
-    @property
-    def is_student(self):
-        return self.user_type == self.UserTypes.STUDENT
+    pass
