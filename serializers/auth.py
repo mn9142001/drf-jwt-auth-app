@@ -7,7 +7,6 @@ from django.contrib.auth.password_validation import validate_password
 from ..models import OTP
 from django.contrib.auth.models import update_last_login
 from django.db import IntegrityError
-from django.db import connection
 
 User = get_user_model()
 
@@ -24,7 +23,7 @@ class JWTLoginSerializer(CustomTokenObtainPairSerializer):
         token = super().get_token(user)
 
         # Add custom claims
-        token['schema_name'] = connection.schema_name
+        token['hello'] = "world"
 
         return token
 
