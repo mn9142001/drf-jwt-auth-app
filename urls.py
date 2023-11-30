@@ -1,14 +1,7 @@
-from .views import SignupView, JWTLoginView, PasswordChangeView, PasswordResetVerifyView, PasswordResetSendView, PasswordResetConfirmView, PromoteUserPermissionView
+from .views import SignupView, JWTLoginView, PasswordChangeView, PasswordResetVerifyView, PasswordResetSendView, PasswordResetConfirmView
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenRefreshView
 from rest_framework.routers import DefaultRouter
-
-utils_router = DefaultRouter()
-
-utils_router.register('user/promote', PromoteUserPermissionView)
-
-admin_utils = [
-] + utils_router.urls
 
 
 password_urls = [
@@ -27,5 +20,4 @@ auth_urls = [
 
 urlpatterns = [
     path('auth/', include(auth_urls)),
-    path('utils/', include(admin_utils)),
 ]
