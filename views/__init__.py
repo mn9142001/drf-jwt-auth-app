@@ -1,2 +1,1 @@
 from .auth import SignupView, JWTLoginView, PasswordResetVerifySerializer, PasswordResetVerifyView, PasswordChangeView, TokenObtainPairView,PasswordResetSendView, PasswordResetConfirmView
-from .utils import PromoteUserPermissionView
